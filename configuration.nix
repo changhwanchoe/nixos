@@ -52,6 +52,9 @@
     "Groups/0/Items/0".Name = "keyboard-us";
     "Groups/0/Items/1".Name = "hangul";
   };
+  i18n.inputMethod.fcitx5.settings.globalOptions = {
+    "Hotkey/TriggerKeys"."0" = "SHIFT_SPACE";
+  };
   i18n.inputMethod.fcitx5.ignoreUserConfig = true;
   # console = {
   #   font = "Lat2-Terminus16";
