@@ -22,22 +22,21 @@
     # NOTE: 'nixos' is the default hostname
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       modules = [
-      	./configuration.nix
-	disko.nixosModules.disko
-	./disko.nix
-	impermanence.nixosModules.impermanence
+        ./configuration.nix
+        disko.nixosModules.disko
+        ./disko.nix
+        impermanence.nixosModules.impermanence
         ./impermanence.nix
         ./persistent.nix
-	home-manager.nixosModules.default
-	{
-		home-manager = {
-			useGlobalPkgs = true;
-			useUserPackages = true;
-			users.cch = import ./home.nix;
-		};
-	}
+	    home-manager.nixosModules.default
+	    {
+            home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users.cch = import ./home.nix;
+            };
+        }
       ];
     };
   };
 }
-
