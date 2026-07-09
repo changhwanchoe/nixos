@@ -14,8 +14,8 @@
     impermanence.url = "github:nix-community/impermanence";
 
     home-manager = {
-	url = "github:nix-community/home-manager";
-	inputs.nixpkgs.follows = "nixpkgs";
+	  url = "github:nix-community/home-manager";
+	  inputs.nixpkgs.follows = "nixpkgs";
     };
   };
   outputs = inputs@{ self, nixpkgs, home-manager, disko, impermanence, ... }: {
@@ -30,11 +30,11 @@
         ./persistent.nix
 	    home-manager.nixosModules.default
 	    {
-            home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                users.cch = import ./home.nix;
-            };
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            users.cch = import ./home.nix;
+          };
         }
       ];
     };
