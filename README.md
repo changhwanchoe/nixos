@@ -1,4 +1,4 @@
-* Starting Guide
+# Starting Guide
 1. sudo -i
 2. nmtui
 3. sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- \
