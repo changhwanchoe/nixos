@@ -16,6 +16,25 @@
     powerOnBoot = false;
   };
   programs.sway.enable = true;
+  environment.etc."sway/config".text = let
+    oriConfig = builtins.readFile "${config.programs.sway.package}/etc/sway/config";
+    modifiedConfig1 = builtins.replaceStrings ["set $mod Mod4"] ["set $mod Mod4\ninput * xkb_options caps:escape\ninput type:touchpad events disabled\ndefault_border pixel 1\ndefault_floating_border pixel 1"] oriConfig;
+    modifiedConfig2 = builtins.replaceStrings ["bindsym $mod+Left focus left"] [""] modifiedConfig1;
+    modifiedConfig3 = builtins.replaceStrings ["bindsym $mod+Right focus right"] [""] modifiedConfig2;
+    modifiedConfig4 = builtins.replaceStrings ["bindsym $mod+Up focus up"] [""] modifiedConfig3;
+    modifiedConfig5 = builtins.replaceStrings ["bindsym $mod+Down focus down"] [""] modifiedConfig4;
+
+    modifiedConfig6 = builtins.replaceStrings ["bindsym $mod+Shift+Left move left"] [""] modifiedConfig5;
+    modifiedConfig7 = builtins.replaceStrings ["bindsym $mod+Shift+Right move right"] [""] modifiedConfig6;
+    modifiedConfig8 = builtins.replaceStrings ["bindsym $mod+Shift+Up move up"] [""] modifiedConfig7;
+    modifiedConfig9 = builtins.replaceStrings ["bindsym $mod+Shift+Down move down"] [""] modifiedConfig8;
+
+    modifiedConfig10 = builtins.replaceStrings ["bindsym Left resize shrink width 10px"] [""] modifiedConfig9;
+    modifiedConfig11 = builtins.replaceStrings ["bindsym Right resize grow width 10px"] [""] modifiedConfig10;
+    modifiedConfig12 = builtins.replaceStrings ["bindsym Up resize shrink height 10px"] [""] modifiedConfig11;
+    modifiedConfig13 = builtins.replaceStrings ["bindsym Down resize grow height 10px"] [""] modifiedConfig12;
+  in
+    modifiedConfig13;
   security.polkit.enable = true;
   services.gnome.gnome-keyring.enable = true;
   imports =
@@ -62,6 +81,7 @@
   };
   i18n.inputMethod.fcitx5.waylandFrontend = true;
   i18n.inputMethod.fcitx5.ignoreUserConfig = true;
+  services.xserver.desktopManager.runXdgAutostartIfNone = true;
   # console = {
   #   font = "Lat2-Terminus16";
   #   keyMap = "us";
