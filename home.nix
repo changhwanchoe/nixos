@@ -27,7 +27,7 @@
   programs.emacs = {
     enable = true;
     package = pkgs.emacs-nox;
-    extraPackages = epkgs: with epkgs; = [
+    extraPackages = epkgs: with epkgs; [
       evil
       evil-collection
       magit
