@@ -6,7 +6,7 @@
       # "/var/log"
       # "/var/lib/bluetooth"
       "/var/lib/nixos" # necessary
-      "/etc/nixos"
+      "/etc/nixos" # necessary
       # "/var/lib/systemd/coredump"
       # { directory = "/var/lib/colord"; user = "colord"; group = "colord"; mode = "u=rwx,g=rx,o="; }
     ];
