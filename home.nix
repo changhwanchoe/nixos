@@ -12,16 +12,16 @@
 
   programs.git = {
     enable = true;
-  };
-
-  programs.qutebrowser = {
-    enable = true;
     settings = {
       user = {
         name = "cch";
         email = "chl01991@naver.com";
       };
     };
+  };
+
+  programs.qutebrowser = {
+    enable = true;
   };
 
   programs.emacs = {
