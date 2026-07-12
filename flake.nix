@@ -19,11 +19,7 @@
     };
   };
   outputs = inputs@{ self, nixpkgs, home-manager, disko, impermanence, ... }: {
-    diskoConfigurations.disko = {
-      imports = [
-        ./disko.nix
-      ];
-    };
+    diskoConfigurations.my-disko = import ./disko.nix
     # NOTE: 'nixos' is the default hostname
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       modules = [
