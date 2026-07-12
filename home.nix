@@ -34,7 +34,12 @@
     ];
   };
 
-  programs.kitty.font.size = "10";
+  wayland.windowManager.sway = {
+    enable = true;
+    config = {
+      fonts.size = 10.0;
+    };
+  };
 
   home.sessionVariables = {
     EDITOR = "emacs";
