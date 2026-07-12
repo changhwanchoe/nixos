@@ -3,7 +3,7 @@
 {
   home.username = "cch";
   home.homeDirectory = "/home/cch";
-  home.stateVersion = "25.11";
+  home.stateVersion = "26.05";
 
   home.packages = with pkgs; [
     fd
@@ -16,12 +16,25 @@
 
   programs.qutebrowser = {
     enable = true;
+    settings = {
+      user = {
+        name = "cch";
+        email = "chl01991@naver.com";
+      };
+    };
   };
 
   programs.emacs = {
     enable = true;
     package = pkgs.emacs-nox;
+    extraPackages = epkgs: with epkgs; = [
+      evil
+      evil-collection
+      magit
+    ];
   };
+
+  programs.kitty.font.size = "10";
 
   home.sessionVariables = {
     EDITOR = "emacs";

@@ -1,7 +1,14 @@
 {
-  boot.initrd.postResumeCommands = lib.mkAfter ''
+  boot.initrd.systemd.services.impermanence = {
+  description = "root subvolume";
+  serviceConfig.type = "oneshot";
+  before = [ "sysroot.mount" ];
+  after = [ "initrd-root-device.target" ];
+  wantedBy = [ "initrd.target" ];
+  unitConfig.DefaultDependencies = false;
+  script = ''
     mkdir /btrfs_tmp
-    mount /dev/root /btrfs_tmp
+    mount /dev/nvme0n1p2 /btrfs_tmp
     if [[ -e /btrfs_tmp/root ]]; then
       mkdir -p /btrfs_tmp/old_roots
       timestamp=$(date --date="@$(stat -c %Y /btrfs_tmp/root)" "+%Y-%m-%-d_%H:%M:%S")
@@ -23,4 +30,5 @@
     btrfs subvolume create /btrfs_tmp/root
     umount /btrfs_tmp
   '';
+  };
 }

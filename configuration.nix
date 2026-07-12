@@ -60,6 +60,7 @@
   i18n.inputMethod.fcitx5.settings.globalOptions = {
     "Hotkey/TriggerKeys"."0" = "SHIFT_SPACE";
   };
+  i18n.inputMethod.fcitx5.waylandFrontend = true;
   i18n.inputMethod.fcitx5.ignoreUserConfig = true;
   # console = {
   #   font = "Lat2-Terminus16";

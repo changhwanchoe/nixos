@@ -11,6 +11,9 @@
     ];
     files = [
       "/etc/machine-id"
+      "/etc/passwd"
+      "/etc/shadow"
+      "/etc/group"
       # { file = "/var/keys/secret_file"; parentDirectory = { mode = "u=rwx,g=,o="; }; }
     ];
     users.cch = {
@@ -19,6 +22,7 @@
         # "Music"
         # "Pictures"
         "Documents"
+        ".emacs.d"
         # "Videos"
         # "VirtualBox VMs"
         # { directory = ".gnupg"; mode = "0700"; }
