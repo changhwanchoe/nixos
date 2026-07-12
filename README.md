@@ -9,6 +9,9 @@
 8. umount -l -R /mnt
 9. reboot
 
-## Boot list delete
+### Boot list delete
 1. efibootmgr
 2. efibootmgr -b XXXX -B
+
+### Check impermanence
+1. journalctl -b -0 -u impermanence
