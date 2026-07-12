@@ -93,8 +93,10 @@
   # services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.root.initialPassword = "1";
   users.users.cch = {
     isNormalUser = true;
+    initialPassword = "1";
     extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
   #   packages = with pkgs; [
   #     tree
