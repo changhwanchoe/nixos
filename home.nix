@@ -46,6 +46,8 @@
     '';
   };
 
+  programs.kitty.font.size = 12;
+
   home.sessionVariables = {
     EDITOR = "emacs";
   };
