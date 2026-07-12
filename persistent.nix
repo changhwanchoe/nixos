@@ -6,6 +6,7 @@
       # "/var/log"
       # "/var/lib/bluetooth"
       "/var/lib/nixos" # necessary
+      "/etc/nixos"
       # "/var/lib/systemd/coredump"
       # { directory = "/var/lib/colord"; user = "colord"; group = "colord"; mode = "u=rwx,g=rx,o="; }
     ];
@@ -20,6 +21,7 @@
         # "Pictures"
         "Documents"
         ".emacs.d"
+        ".config"
         # "Videos"
         # "VirtualBox VMs"
         # { directory = ".gnupg"; mode = "0700"; }
