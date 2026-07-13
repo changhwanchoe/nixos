@@ -22,6 +22,7 @@
         "Documents"
         ".emacs.d"
         ".config"
+        ".pi"
         # "Videos"
         # "VirtualBox VMs"
         # { directory = ".gnupg"; mode = "0700"; }
