@@ -50,6 +50,8 @@
     '';
   };
 
+  programs.kitty.themeFile = "AlienBlood";
+
   home.sessionVariables = {
     EDITOR = "emacs";
   };
