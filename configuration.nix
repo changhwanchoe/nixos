@@ -81,7 +81,7 @@
   };
   i18n.inputMethod.fcitx5.waylandFrontend = true;
   i18n.inputMethod.fcitx5.ignoreUserConfig = true;
-  services.xserver.desktopManager.runXdgAutostartIfNone = true;
+
   # console = {
   #   font = "Lat2-Terminus16";
   #   keyMap = "us";
