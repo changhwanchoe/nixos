@@ -27,7 +27,6 @@
       swayidle
       swaylock
       wmenu
-      wl-clipboard
     ];
   };
   environment.etc."sway/config".text = let
