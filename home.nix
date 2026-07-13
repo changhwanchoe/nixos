@@ -8,7 +8,10 @@
   home.packages = with pkgs; [
     fd
     ripgrep
+    fzf
+    zoxide
     nodejs # for pi coding agent
+    mpv
   ];
 
   programs.git = {
