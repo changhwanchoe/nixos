@@ -15,7 +15,21 @@
     enable = true;
     powerOnBoot = false;
   };
-  programs.sway.enable = true;
+  programs.sway = {
+    enable = true;
+    extraPackages = with pkgs; [
+      brightnessctl
+      kitty
+      grim
+      slurp
+      swappy
+      pulseaudio
+      swayidle
+      swaylock
+      wmenu
+      wl-clipboard
+    ];
+  };
   environment.etc."sway/config".text = let
     oriConfig = builtins.readFile "${config.programs.sway.package}/etc/sway/config";
     modifiedConfig1 = builtins.replaceStrings ["set $mod Mod4"] ["set $mod Mod4\ninput * xkb_options caps:escape\ninput type:touchpad events disabled\ndefault_border pixel 1\ndefault_floating_border pixel 1"] oriConfig;
@@ -104,10 +118,10 @@
   # Enable sound.
   # services.pulseaudio.enable = true;
   # OR
-  services.pipewire = {
-    enable = true;
-    pulse.enable = true;
-  };
+  # services.pipewire = {
+  #   enable = true;
+  #   pulse.enable = true;
+  # };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
