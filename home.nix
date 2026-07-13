@@ -52,6 +52,14 @@
 
   programs.kitty.themeFile = "AlienBlood";
 
+  services.wlsunset = {
+    enable = true;
+    temperature = {
+      day = 4000;
+      night = 4000;
+    };
+  };
+
   home.sessionVariables = {
     EDITOR = "emacs";
   };
