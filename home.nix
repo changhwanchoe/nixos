@@ -8,6 +8,7 @@
   home.packages = with pkgs; [
     fd
     ripgrep
+    nodejs # for pi coding agent
   ];
 
   programs.git = {
@@ -45,8 +46,6 @@
         (evil-collection-init))
     '';
   };
-
-  programs.kitty.font.size = 12;
 
   home.sessionVariables = {
     EDITOR = "emacs";
