@@ -20,9 +20,8 @@
     extraPackages = with pkgs; [
       brightnessctl
       kitty
-      grim
-      slurp
-      swappy
+      grimblast
+      satty
       pulseaudio
       swayidle
       swaylock
