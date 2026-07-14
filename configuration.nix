@@ -30,7 +30,8 @@
   };
   environment.etc."sway/config".text = let
     oriConfig = builtins.readFile "${config.programs.sway.package}/etc/sway/config";
-    modifiedConfig1 = builtins.replaceStrings ["set $mod Mod4"] ["set $mod Mod4\ninput * xkb_options caps:escape\ninput type:touchpad events disabled\ndefault_border pixel 1\ndefault_floating_border pixel 1"] oriConfig;
+    modifiedConfig0 = builtins.replaceStrings ["set $mod Mod4"] ["set $mod Mod4\ninput * xkb_options caps:escape\ninput type:touchpad events disabled\ndefault_border pixel 1\ndefault_floating_border pixel 1"] oriConfig;
+    modifiedConfig1 = builtins.replaceStrings ["set $term foot"] ["set $term kitty"] modifiedConfig0;
     modifiedConfig2 = builtins.replaceStrings ["bindsym $mod+Left focus left"] [""] modifiedConfig1;
     modifiedConfig3 = builtins.replaceStrings ["bindsym $mod+Right focus right"] [""] modifiedConfig2;
     modifiedConfig4 = builtins.replaceStrings ["bindsym $mod+Up focus up"] [""] modifiedConfig3;
@@ -79,7 +80,6 @@
     fcitx5.addons = with pkgs; [ fcitx5-hangul ];
   };
   i18n.inputMethod.fcitx5.settings.inputMethod = {
-    GroupOrder."0" = "Default";
     "Group/0" = {
       Name = "Default";
       "Default Layout" = "us";
@@ -142,7 +142,6 @@
   environment.systemPackages = with pkgs; [
   #   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #   wget
-    tlp
   ];
 
   services.tlp = {
