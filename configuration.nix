@@ -80,6 +80,9 @@
     fcitx5.addons = with pkgs; [ fcitx5-hangul ];
   };
   i18n.inputMethod.fcitx5.settings.inputMethod = {
+    GroupOrder = {
+      "0" = "Default";
+    };
     "Group/0" = {
       Name = "Default";
       "Default Layout" = "us";
