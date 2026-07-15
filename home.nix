@@ -8,11 +8,13 @@
   home.packages = with pkgs; [
     fd
     ripgrep
-    fzf
-    zoxide
     nodejs # for pi coding agent
     mpv
   ];
+
+  programs.fzf.enble = true;
+
+  programs.zoxide.enable = true;
 
   programs.git = {
     enable = true;
@@ -53,18 +55,6 @@
   programs.kitty = {
     enable = true;
     themeFile = "AlienBlood";
-  };
-
-  services.wlsunset = {
-    enable = true;
-
-    temperature = {
-      day = 4000;
-      night = 4000;
-    };
-
-    sunrise = "06:00";
-    sunset = "18:00";
   };
 
   home.sessionVariables = {
