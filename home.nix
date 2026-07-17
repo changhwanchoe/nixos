@@ -11,7 +11,7 @@
     nodejs # for pi coding agent
     mpv
   ];
- # zoxide bat dust duf tldr btop
+ # zoxide bat dust duf tldr btop eza
   programs.fzf.enable = true;
 
   programs.git = {
