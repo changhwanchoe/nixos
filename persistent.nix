@@ -26,7 +26,6 @@
         ".config"
         ".pi"
         ".local/state/wireplumber"
-        ".local/share/zoxide"
         # "Videos"
         # "VirtualBox VMs"
         # { directory = ".gnupg"; mode = "0700"; }
