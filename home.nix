@@ -12,7 +12,7 @@
     mpv
   ];
  # zoxide bat dust duf tldr btop
-  programs.fzf.enble = true;
+  programs.fzf.enable = true;
 
   programs.git = {
     enable = true;
