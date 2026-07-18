@@ -22,7 +22,6 @@
       kitty
       grimblast
       satty
-      pulseaudio
       swayidle
       swaylock
       wmenu
@@ -46,8 +45,13 @@
     modifiedConfig11 = builtins.replaceStrings ["bindsym Right resize grow width 10px"] [""] modifiedConfig10;
     modifiedConfig12 = builtins.replaceStrings ["bindsym Up resize shrink height 10px"] [""] modifiedConfig11;
     modifiedConfig13 = builtins.replaceStrings ["bindsym Down resize grow height 10px"] [""] modifiedConfig12;
+
+    modifiedConfig14 = builtins.replaceStrings ["    bindsym --locked XF86AudioMute exec pactl set-sink-mute \\@DEFAULT_SINK@ toggle"] ["    bindsym --locked XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"] modifiedConfig13;
+    modifiedConfig15 = builtins.replaceStrings ["    bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \\@DEFAULT_SINK@ -5%"] ["    bindsym --locked XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"] modifiedConfig14;
+    modifiedConfig16 = builtins.replaceStrings ["    bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \\@DEFAULT_SINK@ +5%"] ["    bindsym --locked XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"] modifiedConfig15;
+    modifiedConfig17 = builtins.replaceStrings ["    bindsym --locked XF86AudioMicMute exec pactl set-source-mute \\@DEFAULT_SOURCE@ toggle"] ["    bindsym --locked XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"] modifiedConfig16;
   in
-    modifiedConfig13;
+    modifiedConfig17;
   security.polkit.enable = true;
   services.gnome.gnome-keyring.enable = true;
   imports =
@@ -118,10 +122,10 @@
   # Enable sound.
   # services.pulseaudio.enable = true;
   # OR
-  # services.pipewire = {
-  #   enable = true;
-  #   pulse.enable = true;
-  # };
+  services.pipewire = {
+    enable = true;
+    pulse.enable = true;
+  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
