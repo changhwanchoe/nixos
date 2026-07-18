@@ -83,7 +83,7 @@
     GroupOrder = {
       "0" = "Default";
     };
-    "Group/0" = {
+    "Groups/0" = {
       Name = "Default";
       "Default Layout" = "us";
       DefaultIM = "keyboard-us";
