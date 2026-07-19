@@ -23,8 +23,6 @@
         # "Pictures"
         "Documents"
         ".emacs.d"
-        ".config"
-        ".pi"
         ".local/state/wireplumber"
         # "Videos"
         # "VirtualBox VMs"
