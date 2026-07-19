@@ -8,7 +8,6 @@
   home.packages = with pkgs; [
     fd
     ripgrep
-    nodejs # for pi coding agent
     mpv
   ];
  # zoxide bat dust duf tldr btop eza
