@@ -24,6 +24,7 @@
         "Documents"
         ".emacs.d"
         ".local/state/wireplumber"
+        # ".config"
         # "Videos"
         # "VirtualBox VMs"
         # { directory = ".gnupg"; mode = "0700"; }
