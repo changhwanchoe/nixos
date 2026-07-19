@@ -16,8 +16,8 @@
     enable = true;
     settings = {
       user = {
-        name = "";
-        email = "";
+        name = "cch";
+        email = "chl01991@naver.com";
       };
     };
   };
