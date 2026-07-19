@@ -8,7 +8,6 @@
   home.packages = with pkgs; [
     fd
     ripgrep
-    mpv
   ];
  # zoxide bat dust duf tldr btop eza
   programs.fzf.enable = true;
@@ -17,8 +16,8 @@
     enable = true;
     settings = {
       user = {
-        name = "cch";
-        email = "chl01991@naver.com";
+        name = "";
+        email = "";
       };
     };
   };
